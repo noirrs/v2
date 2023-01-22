@@ -1,4 +1,3 @@
-
 import Landing from "@components/Landing";
 import Loading from "@components/Loading";
 import { useEffect, useState } from "react";
@@ -12,9 +11,9 @@ export default function Home() {
 	return loading ? (
 		<Loading />
 	) : (
-		<div className=" w-screen h-screen z-10">
+		<div className=" w-screen h-screen bg-black">
 			<Landing />
-		
+
 		</div>
 	);
 }

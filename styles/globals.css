@@ -83,3 +83,8 @@ a {
 .spscroll::-webkit-scrollbar-thumb:hover {
 	background-color: #444444;
 }
+
+.specialshadow {
+	box-shadow: 0 15px 20px -5px #6366f1, 0 -8px 30px -6px #6366f1;
+	transition: all 1s;
+}
