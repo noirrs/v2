@@ -1,7 +1,20 @@
+
+import Landing from "@components/Landing";
+import Loading from "@components/Loading";
+import { useEffect, useState } from "react";
 export default function Home() {
-	return (
-		<div>
-			<p className="text-white text-center mt-10 text-2xl">Hello World!</p>
+	let [loading, setLoading] = useState(true);
+	useEffect(() => {
+		setTimeout(() => {
+			setLoading(false);
+		}, 400);
+	});
+	return loading ? (
+		<Loading />
+	) : (
+		<div className=" w-screen h-screen z-10">
+			<Landing />
+		
 		</div>
 	);
 }

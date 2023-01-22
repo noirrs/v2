@@ -5,7 +5,9 @@
 		"**/.hg": true,
 		"**/CVS": true,
 		"**/.DS_Store": true,
-		"**/Thumbs.db": true
+		"**/Thumbs.db": true,
+		"public/fonts/nerd.otf": true,
+		"components/Commands/Intro.tsx": true
 	},
-	"hide-files.files": []
+	"hide-files.files": ["public/fonts/nerd.otf", "components/Commands/Intro.tsx"]
 }
