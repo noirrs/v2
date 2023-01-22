@@ -1,0 +1,10 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+codeStyles
+modules.xml
+Project.xml
+v2.iml
+vcs.xml
