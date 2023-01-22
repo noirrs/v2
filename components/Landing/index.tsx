@@ -13,10 +13,10 @@ export default function Landing() {
 		window && Setter(window);
 	}, []);
 	return (
-		<div className="w-screen h-screen absolute">
+		<div className="w-screen h-screen ">
 			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
-			<div className="w-screen h-screen lg:flex lg:flex-col lg:justify-center">
-				<div className="flex flex-col lg:flex-row justify-evenly gap-x-40  relative backdrop-blur-0 lg:gap-y-0 gap-y-10 mt-20 lg:mt-0">
+			<div className="w-screen h-screen lg:flex lg:flex-col lg:justify-center absolute">
+				<div className="flex flex-col lg:flex-row justify-evenly gap-x-40  relative backdrop-blur-0 lg:gap-y-0 gap-y-10 mt-20 lg:mt-0 mx-1 lg:mx-0">
 					<div className="lg:-ml-20 mx-auto lg:mx-0 6/12">
 						{/* Image Div */}
 

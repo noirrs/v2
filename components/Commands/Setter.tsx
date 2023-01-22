@@ -1,3 +1,4 @@
+
 const keyListener = (e: any) => {
 	if (e.key === "Escape") {
 		// close modal
@@ -8,8 +9,10 @@ const keyListener = (e: any) => {
 		dialog.checked = !dialog.checked;
 	}
 };
-
 export default function Setter(window: Window) {
+
+	if(window.screen.width < 1024) return;
+
 	window.addEventListener("keydown", keyListener);
 
 	return () => {
