@@ -16,7 +16,7 @@ export default function Landing() {
 		<div className=" h-screen">
 			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
 			<div className="w-screen h-screen lg:flex lg:flex-col lg:justify-center">
-				<div className="flex flex-col lg:flex-row justify-evenly gap-x-40   backdrop-blur-0    lg:mt-20  lg:mx-0 bg-black ">
+				<div className="flex flex-col lg:flex-row justify-evenly gap-x-40   backdrop-blur-0   lg:mx-0 bg-black ">
 					<div className="lg:-ml-20 mx-auto lg:mx-0 6/12 mt-8">
 						{/* Image Div */}
 
