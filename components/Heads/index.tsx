@@ -6,7 +6,7 @@ interface IProps {
 export const Heads: FC<IProps> = function ({ page }) {
 	return (
 		<Head>
-			<title>Noir - {page}</title>
+			<title>{page} | Noir</title>
 			<meta
 				name="description"
 				content="I'm backend developer who has also experiences in frontend projects using with NextJS and Tailwindcss"

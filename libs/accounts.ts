@@ -21,7 +21,7 @@ const accounts = {
 	GITHUB: `https://github.com/${usernames.GITHUB}`,
 	TWITTER: `https://twitter.com/${usernames.TWITTER}`,
 	SPOTIFY: `https://open.spotify.com/user/${IDs.SPOTIFY}`,
-	LINKEDIN: "https://www.linkedin.com/in/${}/",
+	LINKEDIN: `https://www.linkedin.com/in/${usernames.LINKEDIN}/`,
 	EMAIL: `mailto:${usernames.EMAIL}`
 };
 
