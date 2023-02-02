@@ -10,7 +10,10 @@ export default function Home() {
 		}, 400);
 	});
 	return loading ? (
-		<Loading />
+		<>
+			<Heads page={"Home"} />
+			<Loading />
+		</>
 	) : (
 		<div className=" w-screen h-screen bg-black">
 			<Heads page={"Home"} />
