@@ -80,7 +80,7 @@ function CommandPalette({ pg }: any) {
 					<label
 						className="modal-overlay "
 						htmlFor="modal-2"></label>
-					<div className=" modal-content px-0 max-h-[400px] overflow-hidden flex flex-col gap-5 w11/12 lg:w-8/12 bg-[#171717] outline-none border-[#333]   border-[1px]">
+					<div className=" modal-content px-0 max-h-[400px] overflow-hidden flex flex-col gap-5 w-11/12 lg:w-8/12 bg-[#171717] outline-none border-[#333]   border-[1px]">
 						<div className="sticky">
 							<div className="breadcrumbs text-sm relative">
 								<ul>

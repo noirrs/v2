@@ -12,7 +12,7 @@ export default function Projects({ projects }: any) {
 	});
 
 	return (
-		<div className="w-screen min-h-screen h-full bg-black py-10">
+		<div className="w-screen min-h-screen h-full bg-black py-10 overflow-x-hidden">
 			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
 			<p className="text-white text-6xl lg:ml-10 roboto text-center lg:text-left">Projects & APIs</p>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 mt-12">
@@ -43,8 +43,8 @@ function ProjectCard({ name, description, url, img, type, status, title }: any) 
 		<Link
 			href={url}
 			target="_blank"
-			className="x-2 h-72 ml-10  mr-10  cursor-pointer w-10/12">
-			<div className="p-2 h-full hover:scale-105 transition duration-500 hover:shadow-blue-800  shadow-xl outline-[#171717] outline-2 outline rounded-md flex justify-between flex-col">
+			className="x-2 h-72 ml-10  mr-10  cursor-pointer w-10/12 ">
+			<div className="p-2 h-full hover:scale-105 transition duration-500 hover:shadow-blue-800  shadow-xl border-[#171717] border-2  rounded-md flex justify-between flex-col">
 				<div>
 					<div className="flex w-full mt-4">
 						<div className="p-2">

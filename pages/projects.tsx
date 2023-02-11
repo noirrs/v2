@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 export default function Home({ projects }: any) {
 	let [loading, setLoading] = useState(true);
 	useEffect(() => {
+		window.document.body.style.background = window.navigator.platform === "iPhone" ? "black" : "none";
+
 		setTimeout(() => {
 			setLoading(false);
 		}, 400);

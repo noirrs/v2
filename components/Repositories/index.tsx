@@ -37,8 +37,8 @@ function RepoCard({ name, description, starCount, language, thisWebsite, url, co
 		<Link
 			href={url}
 			target="_blank"
-			className="px-2 py-1  h-36  ml-10  mr-10  cursor-pointer">
-			<div className="flex flex-col justify-between h-full hover:scale-105 transition duration-500 hover:shadow-blue-800  shadow-xl outline-[#171717] outline-2 outline rounded-md">
+			className="h-40  ml-10  mr-10  cursor-pointer">
+			<div className="py-1 flex flex-col justify-between h-full hover:scale-105 transition duration-500 hover:shadow-blue-800  shadow-xl border-[#171717] border-2 outline-none rounded-md">
 				<div className="mx-4">
 					<div className="flex flex-row justify-between mt-2">
 						<p className="text-white font-bold text-2xl">{name}</p>
@@ -54,7 +54,7 @@ function RepoCard({ name, description, starCount, language, thisWebsite, url, co
 					{language && (
 						<div className="flex flex-row">
 							<div
-								className="w-3 h-3 rounded-xl mt-1 md:mt-0 md:mb-4"
+								className="w-3 h-3 rounded-xl mt-1 md:mt-0 md:mb-4 bg-white"
 								style={{ backgroundColor: color }}
 							/>
 							<p className="text-white ml-2 mont md:-mt-[5px]">{language}</p>
