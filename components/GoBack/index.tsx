@@ -11,7 +11,14 @@ export const GoHome = ({ url }: any) => {
 	});
 	return (
 		<div className="w-24 bg-opacity-100 rounded">
-			<Link href={windower && windower.location.hostname == "localhost" ? "http://localhost:3000" : constants.domain}>
+			<Link
+				href={
+					windower && windower.location.hostname == "localhost"
+						? "http://localhost:3000"
+						: constants.domain.startsWith("https://")
+						? constants.domain
+						: "https://" + constants.domain
+				}>
 				<div className="flex w-21 hover:-ml-1 transition-all duration-300">
 					<IoIosArrowRoundBack className="w-8 h-8 text-white " />
 					<p className="text-white mt-1.5 text-sm">Go Home</p>

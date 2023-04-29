@@ -9,7 +9,7 @@ export default function Toast() {
 	return (
 		<div
 			id="toast-top-right"
-			className={`fixed flex items-center w-full max-w-xs p-4 text-white rounded-lg shadow ${position} bg-[#111] border-2 border-white`}
+			className={`fixed flex items-center w-full max-w-xs p-4 text-white rounded-lg shadow ${position} bg-[#111] border-2 border-white z-20`}
 			role="alert">
 			<div className="text-sm font-normal leading-[1.40rem]">
 				<div className="flex justify-end">
