@@ -1,9 +1,9 @@
-import { BiStar } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CommandPalette from "@components/Commands/CommandPalette";
 import Setter from "@components/Commands/Setter";
 import Link from "next/link";
 import constants from "@libs/constants";
+import { GoHome } from "@components/GoBack";
 
 export default function Projects({ projects }: any) {
 	useEffect(() => {
@@ -14,6 +14,9 @@ export default function Projects({ projects }: any) {
 	return (
 		<div className="w-screen min-h-screen h-full bg-black py-10 overflow-x-hidden">
 			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
+			<div className="lg:hidden">
+				<GoHome />
+			</div>
 			<p className="text-white text-6xl lg:ml-10 roboto text-center lg:text-left">Projects & APIs</p>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 mt-12">
 				{projects?.map((project: any) => {

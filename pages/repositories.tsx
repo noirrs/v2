@@ -1,8 +1,8 @@
 import { Heads } from "@components/Heads";
-import Landing from "@components/Landing";
 import Loading from "@components/Loading";
 import Repositories from "@components/Repositories";
-import { usernames } from "@libs/accounts";
+import Toast from "@components/Toast";
+import constants from "@libs/constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -24,6 +24,7 @@ export default function Home({ repos }: any) {
 		<div className=" w-screen h-full bg-black">
 			<Heads page={"Repos"} />
 			<Repositories repos={repos} />
+			<Toast />
 			<br />
 			<br />
 			<br />
@@ -32,12 +33,10 @@ export default function Home({ repos }: any) {
 }
 
 export async function getServerSideProps() {
-	const repoFetch = await axios.get(`https://api.github.com/users/${usernames.GITHUB}/repos`);
+	const repoFetch = await axios.get(constants.fetchReposEndpoint);
 	let repos = repoFetch.data;
 
-	//console.log("data: ", repos);
-
-	let colorFetch = await axios.get("https://raw.githubusercontent.com/ozh/github-colors/master/colors.json");
+	let colorFetch = await axios.get(constants.languageColorEndpoint);
 
 	repos.map((repo: any) => {
 		repo["color"] = colorFetch.data[repo.language]?.color || null;

@@ -21,7 +21,7 @@ export default function Landing() {
 						{/* Image Div */}
 
 						<div className="w-[17rem]">
-							<label htmlFor={screen.width > 1024 ? "modal-2" : "modal-1"}>
+							<label htmlFor={screen.width > 320 ? "modal-2" : "modal-1"}>
 								<img
 									className={`w-full specialshadow rounded-xl transition duration-500 cursor-pointer `}
 									src={constants.avatar}

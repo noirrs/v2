@@ -1,9 +1,8 @@
 import { Heads } from "@components/Heads";
-import Landing from "@components/Landing";
 import Loading from "@components/Loading";
 import Projects from "@components/Projects";
-import Repositories from "@components/Repositories";
-import { usernames } from "@libs/accounts";
+import Toast from "@components/Toast";
+import constants from "@libs/constants";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
@@ -25,6 +24,7 @@ export default function Home({ projects }: any) {
 		<div className=" w-screen h-full bg-black">
 			<Heads page={"Projects"} />
 			<Projects projects={projects} />
+			<Toast />
 			<br />
 			<br />
 			<br />
@@ -33,7 +33,7 @@ export default function Home({ projects }: any) {
 }
 
 export async function getServerSideProps() {
-	let projectFetch = await axios.get(`https://raw.githubusercontent.com/${usernames.GITHUB}/${usernames.GITHUB}/master/Projects.json`);
+	let projectFetch = await axios.get(constants.fetchProjectEndpoint);
 
 	let data = projectFetch.data.projects;
 	console.log("data: ", data);

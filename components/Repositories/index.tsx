@@ -1,8 +1,9 @@
 import { BiStar } from "react-icons/bi";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import CommandPalette from "@components/Commands/CommandPalette";
 import Setter from "@components/Commands/Setter";
 import Link from "next/link";
+import { GoHome } from "@components/GoBack";
 
 export default function Repositories({ repos }: any) {
 	useEffect(() => {
@@ -11,6 +12,9 @@ export default function Repositories({ repos }: any) {
 	return (
 		<div className="w-screen min-h-screen h-full bg-black py-10">
 			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
+			<div className="lg:hidden">
+				<GoHome />
+			</div>
 			<p className="text-white text-6xl lg:ml-10 roboto text-center lg:text-left">Github Repositories</p>
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-y-10 mt-20">
 				{repos.map((repo: any) => {

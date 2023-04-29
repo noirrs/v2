@@ -11,7 +11,7 @@ const keyListener = (e: any) => {
 	}
 };
 export default function Setter(window: Window) {
-	 if (window.screen.width < 1024) return;
+	if (window.screen.width < 320) return;
 
 	window.addEventListener("keydown", keyListener);
 
