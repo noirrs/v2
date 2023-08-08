@@ -52,7 +52,7 @@ function RepoCard({ name, description, starCount, language, thisWebsite, url, co
 						</div>
 					</div>
 
-					<p className="text-gray-100 mont mt-1">{description?.slice(0, 70)}</p>
+					<p className="text-gray-100 mont mt-1">{description?.slice(0, 70)+".."}</p>
 				</div>
 				<div className="flex flex-row ml-4 justify-between">
 					{language && (
