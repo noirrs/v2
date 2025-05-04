@@ -11,7 +11,7 @@ export default function Repositories({ repos }: any) {
 	});
 	return (
 		<div className="w-screen min-h-screen h-full bg-black py-10">
-			<CommandPalette pg={[{ title: "Home", href: "/" }]} />
+			<CommandPalette pg={[{ title: "Repositories", href: "/repositories" }]} />
 			<div className="lg:hidden">
 				<GoHome />
 			</div>
