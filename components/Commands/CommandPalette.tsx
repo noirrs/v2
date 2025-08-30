@@ -12,6 +12,7 @@ import constants from "@libs/constants";
 function CommandPalette({ pg }: any) {
   const [content, setContent] = useState("");
   const [pages, setPages]: any = useState();
+  const [isClient, setIsClient] = useState(false);
   let { GITHUB, EMAIL, RESUME } = accounts;
   const allPages = [
     {
@@ -21,16 +22,6 @@ function CommandPalette({ pg }: any) {
           icon: <SlHome />,
           text: "Home",
           href: "/",
-        },
-        {
-          icon: <AiOutlineFolder />,
-          text: "Projects",
-          href: "/projects",
-        },
-        {
-          icon: <BiGitRepoForked />,
-          text: "Repositories",
-          href: "/repositories",
         },
       ],
     },
@@ -56,11 +47,12 @@ function CommandPalette({ pg }: any) {
     },
   ];
   useEffect(() => {
+    setIsClient(true);
     setPages(allPages);
   }, []);
   return (
-    pages &&
-    window && (
+    isClient &&
+    pages && (
       <div className="">
         <input className="modal-state" id="modal-2" type="checkbox" />
         <div className="modal w-screen backdrop-blur-sm">
@@ -151,20 +143,24 @@ function CommandPalette({ pg }: any) {
                         <div
                           className="flex gap-2 hover:bg-[#2f2f2f] hover:text-white py-2 rounded-md transition  cursor-pointer"
                           onMouseOver={() => {
-                            let ref = window.document.getElementById(
-                              i1.toString() + i.toString()
-                            ) as any;
+                            if (typeof window !== "undefined") {
+                              let ref = window.document.getElementById(
+                                i1.toString() + i.toString()
+                              ) as any;
 
-                            ref.classList.remove("text-gray-800");
-                            ref.classList.add("text-white");
+                              ref?.classList.remove("text-gray-800");
+                              ref?.classList.add("text-white");
+                            }
                           }}
                           onMouseOut={() => {
-                            let ref = window.document.getElementById(
-                              i1.toString() + i.toString()
-                            ) as any;
+                            if (typeof window !== "undefined") {
+                              let ref = window.document.getElementById(
+                                i1.toString() + i.toString()
+                              ) as any;
 
-                            ref.classList.remove("text-white");
-                            ref.classList.add("text-gray-800");
+                              ref?.classList.remove("text-white");
+                              ref?.classList.add("text-gray-800");
+                            }
                           }}
                         >
                           <div className="flex items-center justify-center w-10 h-10 rounded-xl text-white">
