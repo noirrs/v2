@@ -14,6 +14,12 @@ export const Heads: FC<IProps> = function ({ page }) {
       <link rel="icon" href="/assets/pp.png" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+      {/* Google Fonts Climate Crisis */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap"
+        rel="stylesheet"
+      />
+
       <meta name="title" content="Noir" />
       <meta
         name="description"
