@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FiGithub, FiTwitter } from "react-icons/fi";
+import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { SlHome, SlSocialSpotify } from "react-icons/sl";
 import { AiOutlineFolder } from "react-icons/ai";
 import { BiBook, BiGitRepoForked } from "react-icons/bi";
@@ -38,6 +38,12 @@ function CommandPalette({ pg }: any) {
           text: "Resume",
           href: RESUME,
         },
+        {
+          icon: <FiLinkedin />,
+          text: "LinkedIn",
+          href: accounts.LINKEDIN,
+        },
+
         {
           icon: <RiAtLine />, // At symbol icon for Email
           text: "Email",

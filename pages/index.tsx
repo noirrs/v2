@@ -3,13 +3,20 @@ import Setter from "@components/Commands/Setter";
 import { useEffect, useState } from "react";
 import Projects from "@components/Projects";
 import Repositories from "@components/Repositories";
+import WorkExperience from "@components/WorkExperience";
 import axios from "axios";
 import constants from "@libs/constants";
 
 export async function getServerSideProps() {
-  // Fetch projects
-  const projectFetch = await axios.get(constants.fetchProjectEndpoint);
+  // Fetch projects and work experience
+  const projectFetch = await axios
+    .get(constants.fetchProjectEndpoint)
+    .catch((err) => {
+      console.error("Error fetching projects and work experiences:", err);
+      return { data: { projects: [], works: [] } };
+    });
   const projects = projectFetch.data.projects || [];
+  const workExperiences = projectFetch.data.works || [];
 
   // Fetch repos
   const repoFetch = await axios.get(constants.fetchReposEndpoint);
@@ -22,17 +29,18 @@ export async function getServerSideProps() {
     color: colorFetch.data[repo.language]?.color || null,
   }));
 
-  repos = repos.filter((repo: any) => !repo.fork);
+  repos = repos.filter((repo: any) => !repo.fork && repo.name != "noirrs");
 
   return {
     props: {
       projects,
       repos,
+      workExperiences,
     },
   };
 }
 
-export default function Home({ projects, repos }: any) {
+export default function Home({ projects, repos, workExperiences }: any) {
   const [modalId, setModalId] = useState("modal-1");
 
   useEffect(() => {
@@ -93,6 +101,14 @@ export default function Home({ projects, repos }: any) {
           </div>
         </section>
 
+        <section
+          id="work-section"
+          className="w-screen min-h-screen bg-black flex items-center justify-center snap-start snap-always"
+        >
+          <div className="h-max mb-10">
+            <WorkExperience experiences={workExperiences} />
+          </div>
+        </section>
         {/* Projects Section */}
         <section
           id="projects-section"
@@ -104,7 +120,7 @@ export default function Home({ projects, repos }: any) {
           </div>
         </section>
 
-        {/* Repositories Section */}
+        {/* Work Experience Section */}
       </div>
     </div>
   );

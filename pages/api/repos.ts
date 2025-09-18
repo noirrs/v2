@@ -23,7 +23,7 @@ export default async function handler(
     repos.map((repo: any) => {
       repo["color"] = colorFetch.data[repo.language]?.color || null;
     });
-    repos = repos.filter((repo: any) => !repo.fork);
+    repos = repos.filter((repo: any) => !repo.fork && repo.name != "noirrs");
     res.status(200).json(repos);
   } catch (error: any) {
     res.status(error.response?.status || 500).json({ error: error.message });

@@ -64,10 +64,6 @@ function RepoCard({
             <p className="text-white font-bold text-2xl spacegrotesk leading-tight">
               {name}
             </p>
-            <p className="text-indigo-300 italic spacegrotesk text-lg mt-1 flex items-center gap-2">
-              <BiStar className="text-yellow-400 text-xl" />
-              {starCount}
-            </p>
           </div>
           {language && (
             <div className="flex flex-row items-center">
@@ -81,6 +77,12 @@ function RepoCard({
             </div>
           )}
         </div>
+        {starCount > 0 && (
+          <p className="text-indigo-300 italic spacegrotesk text-lg mt-1 flex items-center gap-2">
+            <BiStar className="text-yellow-400 text-xl" />
+            {starCount}
+          </p>
+        )}
         <p className="text-gray-200 spacegrotesk mt-2 text-base leading-relaxed">
           {description?.length > 70
             ? description?.slice(0, 70) + ".."
