@@ -4,7 +4,7 @@ export const usernames = {
   GITHUB: "Noirrs",
   TWITTER: "Noirrsw",
   SPOTIFY: "Noir",
-  LINKEDIN: "noirr",
+  LINKEDIN: "tahakacmaz",
   EMAIL: "hi@noir.land", // expecting as full email address
 };
 
